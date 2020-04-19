@@ -16,7 +16,7 @@ class Downloader:
     def get_links(self, num):
         while True:
             url = "{0}{1}".format(self.url[:-1], num)
-            #url = "https://bitcointalk.org/index.php?board=57.{0}".format(num)
+            #e.g., url = "https://bitcointalk.org/index.php?board=57.{0}".format(num)
             time.sleep(0.7) # sleep for 0.7 sec
             r = requests.get(url)
             if (r.status_code == 200):
@@ -80,17 +80,13 @@ class Downloader:
                 temp = soup.find_all("a", class_= "navPages")
                 if (len(temp) == 0): # The topic has a single page
                     topic_pages = 1
-                    #print(topic_url) # ==================================
                     return str(soup)
-                    #return topic_pages
                 else: # The topic has multiple pages
                     number_container = []
                     for i in temp:
                         if (i.text != "»"):
                             number_container.append(int(i.text))
-                    #print(number_container)
                     number_container.sort(reverse=True)
-                    #print(number_container[0]) # ==================================
                     topic_pages = number_container[0]
                     return int(topic_pages)
                 return -1 # Shouldn't be reached here
@@ -128,7 +124,6 @@ class Downloader:
                 if (type(temp) == str):
                     content2 = temp.encode('utf-8')
                     topic_html = dir_path_topic + "/" + dir_name_topic + "/" + dir_name_topic + ".html.gz"
-                    #print(topic_html)
                     with gzip.open(topic_html, 'wb') as f:
                         f.write(content2)
                 else:
@@ -136,7 +131,6 @@ class Downloader:
                         dir_name_page = "{0}{1}".format(topic[:-1], str((i-1)*20))
                         content3 = self.get_html(dir_name_page).encode('utf-8')
                         each_page_html = dir_path_topic + "/" + dir_name_topic + "/" + dir_name_page.split("?")[1] + ".html.gz"
-                        #print(each_page_html)
                         with gzip.open(each_page_html, 'wb') as f:
                             f.write(content3)
                 print("{0} is complete".format(topic))
