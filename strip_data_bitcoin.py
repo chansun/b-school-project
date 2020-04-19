@@ -55,7 +55,7 @@ for i in range(0, len(data)):
         no_titles.add(data2[i][0])
 #print(len(no_titles))
 
-# Manually added topic titles for the missing ones, using no_titles.
+# Manually add topic titles for the missing ones, using no_titles.
 titles["https://bitcointalk.org/index.php?topic=5210374.0"] = "Bitcoin Price Prediction 2019, 2020, 2025, 2030, 2040"
 titles["https://bitcointalk.org/index.php?topic=5165037.0"] = "Bitcoin Dominance rising again. What is happening?"
 titles["https://bitcointalk.org/index.php?topic=5209110.0"] = "Extrapolating 2014 Correction: Could $6,500 Be The Low For Bitcoin?"

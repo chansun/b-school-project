@@ -47,7 +47,7 @@ for i in range(0, len(data_alt)):
         no_titles.add(data_alt[i][0])
 #print(len(no_titles))
 
-# Manually added topic titles for the missing ones, using no_titles.
+# Manually add topic titles for the missing ones, using no_titles.
 titles_alt['https://bitcointalk.org/index.php?topic=5106915.0'] = "The next bull run and stability"
 titles_alt['https://bitcointalk.org/index.php?topic=5201062.0'] = "WHAT HAPPENS IF BTC TOUCHES 100K ?"
 
