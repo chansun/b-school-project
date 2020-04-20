@@ -138,12 +138,12 @@ class Downloader:
             print("================ {0} is complete ================".format(dir_name))     
 
 bitcoin_url = "https://bitcointalk.org/index.php?board=57.0"
-bitcoin = Downloader(bitcoin_url, "page_links_bit", "bitcoin_speculation", 1, 491)
+bitcoin = Downloader(bitcoin_url, "page_links_bitcoin", "bitcoin_speculation", 1, 491)
 #bitcoin.helper()
 #bitcoin.collect()
 
 altcoin_url = "https://bitcointalk.org/index.php?board=224.0"
-altcoin = Downloader(altcoin_url, "page_links_alt", "altcoin_speculation", 1, 318)
+altcoin = Downloader(altcoin_url, "page_links_altcoin", "altcoin_speculation", 1, 318)
 #altcoin.helper()
 #altcoin.collect()
 
